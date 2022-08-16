@@ -12,7 +12,7 @@ const Time = () => {
       hr: d.getHours(),
       min: d.getMinutes()
     });
-  }, []);
+  });
   useEffect(() => {
     setTimeout(() => {
       setTime(prev => prev = {
@@ -20,7 +20,7 @@ const Time = () => {
         min: d.getMinutes()
       });
     }, 10 * 1000)
-  }, [time]);
+  },[time]);
   const days = [ "sunday","monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
   return (<>
     <div className="time-container">

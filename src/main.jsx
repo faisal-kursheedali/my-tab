@@ -1,4 +1,4 @@
-import {Maintask,Subtask,Temparature,Time,News,Webpg,Quote} from "./component/import";
+import {Maintask,Temparature,Time,News,Webpg,Quote} from "./component/import";
 import "./main.css"
 
 import React,{useState} from 'react';

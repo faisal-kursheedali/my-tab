@@ -9,13 +9,13 @@ import { generateBg } from './app/feature/bg';
 import Main from './main';
 
 function App() {
-  const state = useSelector(store => store.news);
+  // const state = useSelector(store => store.news);
   const bg = useSelector(store => store.bg);
   const dispatch=useDispatch();
   useEffect(()=>{
     dispatch(generateBg());
     // dispatch(generateQuote());
-  },[])
+  },)
   useEffect(()=>{
     document.body.style.backgroundImage=`url(${bg.bg})`;
     console.log(bg.bg);
