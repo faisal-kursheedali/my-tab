@@ -1,0 +1,55 @@
+.main-task-head{
+    font-size: 1.2rem;
+    font-weight:600;
+    margin-bottom: 6px;
+    color: red;
+}
+.new-maintask-container{
+    margin-top: 6px;
+}
+.maintask-new-input{
+    background-color:lightgreen;
+    
+}
+.maintask-new-task-btn,.maintask-edit-task-btn{
+    position: absolute;
+    cursor: pointer;
+    top: 6px;
+    left: 6px;
+    background-color: lightgreen;
+  border: 0px; 
+  font-weight: 600;
+}
+.maintask-edit-task-btn{
+    right: 6px;
+    left: initial;
+    background-color: lightskyblue;
+}
+.maintask-new-task{
+    display: inline-flex;
+    align-items: center;
+}
+.maintask-input{
+    background-color: lightskyblue;
+}
+.maintask-edit-btn,.maintask-new-btn{
+border: 0px;
+font-size: .9rem;
+cursor: pointer;
+}
+.maintask-edit-btn{
+    align-self: flex-end;
+    /* background-color:lightskyblue; */
+}
+.maintask-input,.maintask-new-input{
+    border: 0px;
+    outline: 0px;
+}
+.maintask-new-btn{
+    /* background-color: lime; */
+    
+}
+/* .maintask-list{
+    max-height: 50px;
+    overflow-y: scroll;
+} */

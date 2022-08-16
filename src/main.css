@@ -1,0 +1,89 @@
+.app-container{
+    /* height: 100vh; */
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.news-btn,.todo-btn,.app-btn{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: .5rem;
+    background-color: rgb(30, 28, 28);
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.news-btn{
+    top: .5rem;
+    right: .5rem;
+}
+.todo-btn{
+    top: initial;
+    /* right: initial; */
+    bottom: .5rem;
+    left: .5rem; 
+}
+.app-btn{
+    top: .5rem;
+    right: initial;
+    bottom: initial;
+    left: .5rem;
+    color: white;
+}
+/* .weather-box{
+    
+    top: 4rem;
+    left: 4rem;
+    color: white;
+    font-size: 1rem;
+} */
+.main-page,.maintask-box{
+    padding: 2rem;
+    margin-top: 5rem;
+    text-align: center;
+    border-radius: .5rem;
+    background-color: rgba(0, 0, 0, 0.844);
+    color: white;
+}
+.maintask-box{
+    position: relative;
+    margin-top: 2rem;
+    display: flex;
+}
+.todo-box,.webpg-box,.news-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    min-width: 250px;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: black;
+    padding: 1rem;
+    z-index: 3;
+}
+.news-box{
+    left: initial;
+    right: 0;
+}
+.side-box-close-btn{
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+.side-box-close-icn{
+    color: white;
+    font-size: 1.5rem;
+}
+.box-head{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+.box-content{
+    margin-top: 2.5rem;
+    color: white;
+}

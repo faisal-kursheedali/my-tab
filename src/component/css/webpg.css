@@ -1,0 +1,17 @@
+.webpg-link{
+    display: flex;
+    /* align-items: center; */
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 8px;
+}
+.webpg-list{
+    list-style: none;
+    padding-left: 0px;
+    padding: 1rem;
+    margin: 0px;
+}
+.webpg-icn{
+    margin-right: 6px;
+}

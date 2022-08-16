@@ -1,0 +1,7 @@
+.weather-container{
+    display: flex;
+    justify-content: center;
+}
+.climate-box{
+    margin-left: 1rem;
+}

@@ -1,0 +1,16 @@
+.news-img{
+    width: 100px;
+    height: 100px;
+}
+.news-link{
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+.news-detail{
+    margin-left: 6px;
+    font-weight: bold;
+}
+.news-container{
+    margin-top: 16px;
+}
