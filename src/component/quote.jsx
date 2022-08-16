@@ -7,7 +7,7 @@ const Quote = () => {
   const dispatch=useDispatch();
   useEffect(()=>{
     dispatch(generateQuote());
-  })
+  },[])
   
   return (
     <div>

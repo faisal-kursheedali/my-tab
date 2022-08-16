@@ -12,7 +12,7 @@ const Time = () => {
       hr: d.getHours(),
       min: d.getMinutes()
     });
-  });
+  },[]);
   useEffect(() => {
     setTimeout(() => {
       setTime(prev => prev = {

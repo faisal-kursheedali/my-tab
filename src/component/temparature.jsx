@@ -15,7 +15,7 @@ const Temparature = () => {
    (i) => {
           setLocation(prev=>prev={lat:i.coords.latitude,lon:i.coords.longitude});
         })
-  });
+  },[]);
   useEffect(() => {
     if (location.lat!==0&&location.lon!==0) {
       
