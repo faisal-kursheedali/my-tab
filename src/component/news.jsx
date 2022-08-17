@@ -8,10 +8,17 @@ import "./css/news.css"
 const News = () => {
   const state = useSelector(store => store.news);
   const dispatch = useDispatch();
-  if (state.data===[]) {
-    
+  if (state.data.length === 0) {
     dispatch(fetchNews());
   }
+  // useEffect(()=>{
+  //   if (state.data === []) {
+  //       console.log(state);
+  //       dispatch(fetchNews());
+  //     }else{
+  //         console.log(state);
+  //       }
+  // },[])
   // useEffect(() => {
   //     if (state.data!==[]) {
         
