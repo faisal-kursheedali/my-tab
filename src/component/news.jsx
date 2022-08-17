@@ -11,7 +11,7 @@ const News = () => {
       dispatch(fetchNews());
    
     // console.log(state.data);
-  })
+  },[])
   return (
     <>
       {
