@@ -11,16 +11,19 @@ const Temparature = () => {
   })
   const dispatch=useDispatch();
   useEffect(() => {
-  window.navigator.geolocation.getCurrentPosition(
-   (i) => {
-          setLocation(prev=>prev={lat:i.coords.latitude,lon:i.coords.longitude});
-        })
+  (()=>{
+    window.navigator.geolocation.getCurrentPosition(
+      (i) => {
+             setLocation(prev=>prev={lat:i.coords.latitude,lon:i.coords.longitude});
+           })
+  })()
   },[]);
   useEffect(() => {
-    if (location.lat!==0&&location.lon!==0) {
+    (()=>{if (location.lat!==0&&location.lon!==0) {
       
       dispatch(fetchWeather(location));
-    }
+    }})()
+    
   }, [location]);
   useEffect(()=>{
     console.log(state.data);

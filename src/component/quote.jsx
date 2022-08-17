@@ -6,7 +6,11 @@ const Quote = () => {
   const quoteState = useSelector(store => store.quote);
   const dispatch=useDispatch();
   useEffect(()=>{
-    dispatch(generateQuote());
+    (()=>{
+
+      dispatch(generateQuote());
+    })()
+    // eslint-disable-next-line
   },[])
   
   return (
