@@ -7,7 +7,7 @@ const Temparature = () => {
   const state=useSelector(store=>store.weather);
   const data=state.data;
   const [location,setLocation]=useState({
-    lat:0,lon:0
+    lat:0,lon:0  
   })
   const dispatch=useDispatch();
   useEffect(() => {
@@ -19,12 +19,12 @@ const Temparature = () => {
   })()
   },[]);
   useEffect(() => {
-    (()=>{if (location.lat!==0&&location.lon!==0) {
+    if (location.lat!==0&&location.lon!==0) {
       
       dispatch(fetchWeather(location));
-    }})()
+    }
     
-  }, [location]);
+  }, [location,dispatch]);
   useEffect(()=>{
     console.log(state.data);
   },[state]);
