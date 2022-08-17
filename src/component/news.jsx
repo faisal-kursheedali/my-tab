@@ -8,7 +8,10 @@ import "./css/news.css"
 const News = () => {
   const state = useSelector(store => store.news);
   const dispatch = useDispatch();
-  dispatch(fetchNews());
+  if (state.data===[]) {
+    
+    dispatch(fetchNews());
+  }
   // useEffect(() => {
   //     if (state.data!==[]) {
         
