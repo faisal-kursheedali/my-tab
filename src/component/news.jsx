@@ -7,7 +7,7 @@ const News = () => {
   const state = useSelector(store => store.news);
   const dispatch = useDispatch();
   useEffect(() => {
-    if (state===[]) {
+    if (state.data===[]) {
       
       dispatch(fetchNews());
     }
