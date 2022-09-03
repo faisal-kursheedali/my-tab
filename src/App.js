@@ -29,6 +29,21 @@ function App() {
      
   // // }
   // },[stateMain,stateSub]);
+  const getLocalStorage=(pram)=>{
+    return localStorage.getItem(pram);
+  }
+  const setLocalStorage=(pram,value)=>{
+    return localStorage.setItem(pram,value)
+  }
+  if (!(getLocalStorage("maintask")&&getLocalStorage("link")&&getLocalStorage("subtask"))) {
+    console.log( getLocalStorage("maintask"));
+    console.log(typeof getLocalStorage("maintask"));
+    let arr=[];
+    setLocalStorage("maintask",JSON.stringify(arr));
+    setLocalStorage("subtask",JSON.stringify(arr));
+    setLocalStorage("link",JSON.stringify(arr));
+  }
+  // console.log(localStorage.getItem("maintask"));
   useEffect(()=>{
       dispatch(loadMaintask());
       dispatch(loadSubtask());
