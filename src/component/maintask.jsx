@@ -16,7 +16,7 @@ const Maintask = () => {
         <div className="maintask-container">
             <div className="main-task-head">Main task </div>
             {
-                data.length !== 0 ? (
+                data.length !== [] ? (
                     <>
                         {edit ? data.length !== 0 ? (<button className="maintask-edit-btn" onClick={() => setEdit(false)}>done</button>) : "" : ""}
                         <div className="maintask-list">
