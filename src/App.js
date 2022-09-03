@@ -14,8 +14,8 @@ import { loadAppLink } from './app/feature/webpages';
 function App() {
   // const state = useSelector(store => store.news);
   const bg = useSelector(store => store.bg);
-  const stateMain = useSelector(store => store.maintask);
-  const stateSub = useSelector(store => store.subtask);
+  // const stateMain = useSelector(store => store.maintask);
+  // const stateSub = useSelector(store => store.subtask);
   const dispatch=useDispatch();
   // useEffect(()=>{
   //   console.log(stateMain);
@@ -33,11 +33,11 @@ function App() {
       dispatch(loadMaintask());
       dispatch(loadSubtask());
       dispatch(loadAppLink());
-  },[])
+  },[dispatch])
   useEffect(()=>{
     dispatch(generateBg());
     // dispatch(generateQuote());
-  },[])
+  },[dispatch])
   useEffect(()=>{
     document.body.style.backgroundImage=`url(${bg.bg})`;
     console.log(bg.bg);
