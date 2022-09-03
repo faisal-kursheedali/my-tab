@@ -11,6 +11,8 @@ const Maintask = () => {
     const [newTask, setNewTask] = useState(false);
     const [newTaskValue, setNewTaskValue] = useState("");
     const data = state.mainTask;
+    console.log(state);
+    console.log(state.mainTask);
     console.log(data);
     console.log(typeof data);
     return (
