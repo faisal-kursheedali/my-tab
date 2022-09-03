@@ -12,6 +12,7 @@ const Webpg = () => {
   // const [useImg, setUseImg] = useState("");
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
+  
   const dispatch = useDispatch();
   console.log(state);
   // const webIcnHandler = (title,link) => {
@@ -34,6 +35,7 @@ const Webpg = () => {
   // function isImage(url) {
   //   return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
   // }
+  
   return (
     <>
       <div className="webpg-container">
@@ -63,12 +65,6 @@ const Webpg = () => {
                 <li className="webpg-list-item" key={index}>
                   <a href={i.link} className="webpg-link">
                     <div className="webpg-icn">
-                      {/* {
-                        isImage(`${i.link}/favicon.ico`)?(<img src={`${i.link}/favicon.ico`} alt="" className="webpg-img" />):(<div className="web-title-icn">
-                           {i.title.charAt()}
-                          </div>)
-                      } */}
-                      {/* <img src={`${i.link}/favicon.ico`} alt="" className="webpg-img" /> */}
                       <FaGlobeAmericas/>
                    </div>
                     <div className="webpg-title">{i.title}</div>

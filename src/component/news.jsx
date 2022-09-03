@@ -3,7 +3,8 @@ import React, {
 } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { fetchNews } from '../app/feature/news';
-import "./css/news.css"
+import "./css/news.css";
+// import ReactLoading from 'react-loading';
 
 const News = () => {
   const state = useSelector(store => store.news);
@@ -47,7 +48,7 @@ const News = () => {
               })
             }
           </>
-         ) : ""
+         ) :"loading...."
       } 
 
     </>

@@ -1,4 +1,4 @@
-import {Maintask,Temparature,Time,News,Webpg,Quote} from "./component/import";
+import {Maintask,Temparature,Time,News,Webpg,Quote, Subtask} from "./component/import";
 import "./main.css"
 
 import React,{useState} from 'react';
@@ -9,6 +9,7 @@ import {IoAppsSharp} from "react-icons/io5"
 const Main = () => {
   const[news,setNews]=useState(false)
   const[todo,setTodo]=useState(false)
+  const task=[{head:"hii",desc:"how are u boi"}]
   const[webpg,setWebpg]=useState(false)
   return (
     <div className="app-container">
@@ -27,7 +28,7 @@ const Main = () => {
           <div className="side-box-close-btn" onClick={()=>setTodo(prev=>prev=false)}><AiOutlineCloseCircle className="side-box-close-icn"/></div>
             <div className="box-head">TODO</div>
         <div className="box-content">
-          hii
+          <Subtask task={task}/>
         </div>
 
         </div>:""

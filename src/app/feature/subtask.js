@@ -12,11 +12,21 @@ const subTaskSlice=createSlice({
     reducers:{
         addsubTask:(state,action)=>{
             state.subTask=[...state.subTask,action.payload];
+            console.log(state.subTask);
+            localStorage.setItem("subtask",JSON.stringify(state.subTask));
         },
         completedsubTask:(state,action)=>{
-            const newArr=state.subTask.filter(i=> i!==action.payload.id );
-            state.completed=[...state.completed,action.payload];
+            const newArr=state.subTask.filter(i=> i.id!==action.payload.id );
+            // state.completed=[...state.completed,action.payload];
             state.subTask=newArr;
+            localStorage.setItem("subtask",JSON.stringify(state.subTask));
+        },
+        loadSubtask:(state)=>{
+            const task=JSON.parse(localStorage.getItem("subtask"));   
+            // console.log(task);
+            // const {subTask}=task;
+            // console.log(subTask);
+            state.subTask=task;
         },
         delsubTask:(state,action)=>{
             const newArrsubTask=state.subTask.filter(i=> i!==action.payload.id );
@@ -34,6 +44,6 @@ const subTaskSlice=createSlice({
     }
 });
 
-const {delsubTask,addsubTask,delPermanentlysubTask,completedsubTask}=subTaskSlice.actions
-export {delsubTask,addsubTask,delPermanentlysubTask,completedsubTask};
+const {delsubTask,addsubTask,delPermanentlysubTask,completedsubTask,loadSubtask}=subTaskSlice.actions
+export {delsubTask,addsubTask,delPermanentlysubTask,completedsubTask,loadSubtask};
 export default subTaskSlice.reducer;

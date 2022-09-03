@@ -1,36 +1,58 @@
 import React, {  useState } from 'react';
 import { useSelector, useDispatch } from "react-redux"
-import { addMainTask, editMainTask } from '../app/feature/maintask';
+import { addMainTask, completedMainTask, editMainTask } from '../app/feature/maintask';
 import {AiFillEdit} from "react-icons/ai"
 import "./css/maintask.css"
 
 const Maintask = () => {
     const state = useSelector(store => store.maintask)
+    // const stateSub = useSelector(store => store.subtask)
     const dispatch = useDispatch();
     const [edit, setEdit] = useState(false);
     const [newTask, setNewTask] = useState(false);
     const [newTaskValue, setNewTaskValue] = useState("");
     const data = state.mainTask;
+    
     return (
         <div className="maintask-container">
             <div className="main-task-head">Main task </div>
-            {edit?<button className="maintask-edit-btn" onClick={()=>setEdit(false)}>done</button>:''}
+            {edit?data.length!==0?(<button className="maintask-edit-btn" onClick={()=>setEdit(false)}>done</button>):"":""}
+            {
+                data.length===0?(<>
+                <div className="maintask-empty-container">
+
+                <div className="maintask-empty-container-head">There is no task assigned 🤷‍♂️</div>
+                </div>
+                </>):""
+            }
             <div className="maintask-list">
             {
-
-                data.map((i,index) => {
+            state.mainTask.map((i,index) => {
                     return (
 
                         !edit ? (
                             <div className="maintask-display">
                                 {i}
-                            </div>) : (
+                                <button onClick={()=>{
+                                    dispatch(completedMainTask(i));
+                                    console.log(mainTask);
+                                    // localStorage.setItem("myTabTask",JSON.stringify({
+                                    //     mainTask:mainTask,
+                                    //     subTask:subTask
+                                    //   }));
+                                }}>Done</button>
+                            </div>
+                            ) : (
                                 <div className="maintask-input-container">
                                     <input type="text" className="maintask-input" placeholder='Enter the main task' value={i} onChange={(e)=>{
                                         dispatch(editMainTask({
                                             index:index,
                                             text:e.target.value
                                         }));
+                                        // localStorage.setItem("myTabTask",JSON.stringify({
+                                        //     mainTask:mainTask,
+                                        //     subTask:subTask
+                                        //   }))
                                     }}/>
                                 </div>
                             
@@ -52,6 +74,10 @@ const Maintask = () => {
                         setNewTask(false)
                         if (newTaskValue!=="") {
                             dispatch(addMainTask(newTaskValue));
+                            // localStorage.setItem("myTabTask",JSON.stringify({
+                            //     mainTask:mainTask,
+                            //     subTask:subTask
+                            //   }))
                         }
                         setNewTaskValue(prev=>prev="")
                     }}>add</button>

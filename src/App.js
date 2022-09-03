@@ -7,15 +7,37 @@ import { generateBg } from './app/feature/bg';
 // import { fetchquote, generateQuote } from './app/feature/quote';
 // import Maintask from './component/maintask';
 import Main from './main';
+import { loadMaintask } from './app/feature/maintask';
+import { loadSubtask } from './app/feature/subtask';
+import { loadAppLink } from './app/feature/webpages';
 
 function App() {
   // const state = useSelector(store => store.news);
   const bg = useSelector(store => store.bg);
+  const stateMain = useSelector(store => store.maintask);
+  const stateSub = useSelector(store => store.subtask);
   const dispatch=useDispatch();
+  // useEffect(()=>{
+  //   console.log(stateMain);
+  //   localStorage.setItem("myTabTask",JSON.stringify({
+  //     mainTask:stateMain.mainTask,
+  //     subTask:stateSub.subTask
+  //   }))
+  // //   if (stateMain.mainTask.length&& stateSub.subTask.length === 0) {
+  // //    return""
+  // // }else{
+     
+  // // }
+  // },[stateMain,stateSub]);
+  useEffect(()=>{
+      dispatch(loadMaintask());
+      dispatch(loadSubtask());
+      dispatch(loadAppLink());
+  },[])
   useEffect(()=>{
     dispatch(generateBg());
     // dispatch(generateQuote());
-  },)
+  },[])
   useEffect(()=>{
     document.body.style.backgroundImage=`url(${bg.bg})`;
     console.log(bg.bg);
