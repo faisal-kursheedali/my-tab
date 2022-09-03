@@ -7,6 +7,7 @@ import "./css/maintask.css"
 const Maintask = () => {
     const state = useSelector(store => store.maintask)
     // const stateSub = useSelector(store => store.subtask)
+    const {mainTask}=state;
     const dispatch = useDispatch();
     const [edit, setEdit] = useState(false);
     const [newTask, setNewTask] = useState(false);
