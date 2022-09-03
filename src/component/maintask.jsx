@@ -12,7 +12,7 @@ const Maintask = () => {
     const [edit, setEdit] = useState(false);
     const [newTask, setNewTask] = useState(false);
     const [newTaskValue, setNewTaskValue] = useState("");
-    const data = state.mainTask;
+    const data = mainTask;
     
     return (
         <div className="maintask-container">
